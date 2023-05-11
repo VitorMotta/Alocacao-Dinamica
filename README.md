@@ -1,4 +1,4 @@
-# BubbleSort
+# Alocação Dinâmica
 
 Aula 9A Programação de Computadores 2 - UFRJ
 
