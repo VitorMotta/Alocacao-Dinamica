@@ -54,13 +54,29 @@ int main() {
 
     pt_aux = pt_head;
 
+    
     while (pt_aux->prox != NULL) {  // Imprimindo valores ordenados
         printf("valor: %d \n", pt_aux->valor);
         pt_aux = pt_aux->prox;
     }
 
-    free(pt_aux);
-    free(pt_head);
+
+    if (pt_head->prox == NULL) {
+        puts("Vazio!");
+        exit(1);
+    } else {
+        free(pt_head);
+    }
+
+    if (pt_aux->prox == NULL) {
+        puts("Vazio!");
+        exit(1);
+    } else {
+        free(pt_aux);
+    }
+
+    
+    
 
     return 0;
 }
