@@ -28,13 +28,16 @@ int main() {
     printf("\n");
 
     //Remover dados
+    int remover;
+    printf("Digite um valor a ser removido:\n");
+    scanf("%d", &remover);
 
     LISTA *pt_p2 = NULL;
 
     pt_aux = pt_head;
 
     while (pt_aux != NULL){
-        if (pt_aux->valor == 1){
+        if (pt_aux->valor == remover){
             if (pt_aux == pt_head){
                 pt_head = pt_aux->prox;
                 free(pt_aux);
@@ -53,29 +56,17 @@ int main() {
     printf("\n");
 
     pt_aux = pt_head;
-
-    
+    if (pt_aux->prox != NULL){
+        puts("Valores após a remoção:");
+    } else {
+        puts("Lista vazia!");
+    }    
     while (pt_aux->prox != NULL) {  // Imprimindo valores ordenados
         printf("valor: %d \n", pt_aux->valor);
         pt_aux = pt_aux->prox;
     }
 
-
-    if (pt_head->prox == NULL) {
-        puts("Vazio!");
-        exit(1);
-    } else {
-        free(pt_head);
-    }
-
-    if (pt_aux->prox == NULL) {
-        puts("Vazio!");
-        exit(1);
-    } else {
-        free(pt_aux);
-    }
-
-    
+    free(pt_head);
     
 
     return 0;
